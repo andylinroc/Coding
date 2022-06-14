@@ -5,6 +5,7 @@ def process_line(line):
     """
     Do some single line processing
     """
+    line = line.rstrip()
     return line
 
 
@@ -17,6 +18,6 @@ if __name__ == "__main__":
     with open(in_file_name, encoding="utf-8") as fp:
         for line in fp:
             new_line = process_line(line)
-            ofile.write(new_line)
+            ofile.write(new_line + "\n")
 
     ofile.close()
